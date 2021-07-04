@@ -50,6 +50,7 @@ const postRegister = (req, res) => {
     console.log(user.name, user.email, hash);
     postgres("users")
       .insert({
+        id: 1,
         name: user.name,
         email: user.email,
         password: hash,
