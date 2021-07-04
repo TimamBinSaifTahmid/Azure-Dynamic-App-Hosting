@@ -59,7 +59,7 @@ const postRegister = (req, res) => {
         res.redirect("/login");
       })
       .catch((err) => {
-        console.log(err);
+        console.log("dsfsdf", err);
         errors.push(err.detail);
         console.log(err.detail);
         req.flash("errors", errors);
