@@ -40,6 +40,7 @@ const postRegister = (req, res) => {
         password: process.env.password,
         database: process.env.database,
       },
+      error(message) {},
     });
     console.log("connect successful");
     const hash = bcrypt.hashSync(password);
