@@ -3,7 +3,7 @@ let flag = false;
 let userName = "";
 
 const getRegister = (req, res) => {
-  //console.log("asdsad", req.flash("errors"));
+  console.log("asdsad", req.flash("errors"));
 
   res.render("userViews/register-v2.ejs", { errors: req.flash("errors") });
 };
