@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head.ejs') %>
+
 <body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
@@ -9,7 +10,10 @@
       <a href="/" class="h1"><b>Admin</b>LTE</a>
     </div>
     <div class="alert alert-danger">
-    <%= error%>
+      <%if(error){%>
+        <%= error%>
+       <%}%>
+   
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>

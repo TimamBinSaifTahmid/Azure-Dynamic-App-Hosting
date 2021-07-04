@@ -56,7 +56,7 @@ const postRegister = (req, res) => {
       })
       .then(() => {
         console.log("success");
-        res.render("userViews/login-v2.ejs");
+        res.redirect("/login");
       })
       .catch((err) => {
         console.log(err);
