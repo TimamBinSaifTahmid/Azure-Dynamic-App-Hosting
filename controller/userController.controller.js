@@ -45,7 +45,9 @@ const postRegister = (req, res) => {
       },
     });
     console.log("connect successful");
+    console.log(process.env.host);
     const hash = bcrypt.hashSync(password);
+    console.log(user.name, user.email, hash);
     postgres("users")
       .insert({
         name: user.name,
