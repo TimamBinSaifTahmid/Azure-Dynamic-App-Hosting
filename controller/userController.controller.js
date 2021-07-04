@@ -50,9 +50,11 @@ const postRegister = (req, res) => {
         password: hash,
       })
       .then(() => {
+        console.log("success");
         res.render("userViews/login-v2.ejs");
       })
       .catch((err) => {
+        console.log(err);
         errors.push(err.detail);
         console.log(err.detail);
         req.flash("errors", errors);
