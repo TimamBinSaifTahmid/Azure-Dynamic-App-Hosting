@@ -28,7 +28,7 @@ const postRegister = (req, res) => {
     req.flash("errors", errors);
     res.redirect("/register");
   } else {
-    // console.log(name, email, password);
+    console.log(name, email, password);
     userCreation(name, email, password);
     const bcrypt = require("bcrypt-nodejs");
     const knex = require("knex");
@@ -41,6 +41,7 @@ const postRegister = (req, res) => {
         database: process.env.database,
       },
     });
+    console.log("connect successful");
     const hash = bcrypt.hashSync(password);
     postgres("users")
       .insert({
