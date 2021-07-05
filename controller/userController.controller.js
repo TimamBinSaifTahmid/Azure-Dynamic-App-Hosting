@@ -11,6 +11,7 @@ const getRegister = (req, res) => {
       user: "postgres",
       password: "tahmid",
       database: "server_lab_02_03",
+      sslmode: "require",
     },
   });
   postgres
