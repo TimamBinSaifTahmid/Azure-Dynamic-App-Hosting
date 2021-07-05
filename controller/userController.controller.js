@@ -7,10 +7,10 @@ const getRegister = (req, res) => {
   const postgres = knex({
     client: "pg",
     connection: {
-      host: "52.170.145.219",
-      user: "postgres",
-      password: "tahmid",
-      database: "server_lab_02_03",
+      host: "lab02-180042117.postgres.database.azure.com",
+      user: "tahmid@lab02-180042117",
+      password: "Timambinsaif17",
+      database: "postgres",
       sslmode: "require",
     },
   });
