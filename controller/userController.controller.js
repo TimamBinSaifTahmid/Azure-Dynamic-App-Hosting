@@ -3,6 +3,21 @@ let flag = false;
 let userName = "";
 
 const getRegister = (req, res) => {
+  const postgres = knex({
+    client: "pg",
+    connection: {
+      host: "52.170.145.219",
+      user: "postgres",
+      password: "tahmid",
+      database: "AgainstPandemic",
+    },
+  });
+  postgres
+    .select("*")
+    .from("users")
+    .then((data) => {
+      console.log(data);
+    });
   console.log("asdsad", req.flash("errors"));
 
   res.render("userViews/register-v2.ejs", { errors: req.flash("errors") });
