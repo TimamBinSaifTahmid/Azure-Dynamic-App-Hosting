@@ -10,7 +10,7 @@ const getRegister = (req, res) => {
       host: "52.170.145.219",
       user: "postgres",
       password: "tahmid",
-      database: "AgainstPandemic",
+      database: "server_lab_02_03",
     },
   });
   postgres
