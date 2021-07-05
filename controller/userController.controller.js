@@ -3,6 +3,7 @@ let flag = false;
 let userName = "";
 
 const getRegister = (req, res) => {
+  const knex = require("knex");
   const postgres = knex({
     client: "pg",
     connection: {
