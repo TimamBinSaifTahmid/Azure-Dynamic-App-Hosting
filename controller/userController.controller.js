@@ -30,7 +30,7 @@ const getRegister = (req, res) => {
 
 const postRegister = (req, res) => {
   const { user, userCreation } = require("./../model/userModel");
-  const { name, email, password, retypedPassword } = req.body;
+  const { name, email, password, retypedPassword, phone } = req.body;
   //Data Validation
   // console.log(name, email, password, retypedPassword);
   const errors = [];
@@ -48,8 +48,9 @@ const postRegister = (req, res) => {
     req.flash("errors", errors);
     res.redirect("/register");
   } else {
-    console.log(name, email, password);
-    userCreation(name, email, password);
+    console.log(name, email, password, phone);
+    userCreation(name, email, password, phone);
+    console.log(user.phone);
     const bcrypt = require("bcrypt-nodejs");
     const knex = require("knex");
     const postgres = knex({
@@ -115,7 +116,7 @@ const postLogin = (req, res) => {
     .then((data) => {
       const isValid = bcrypt.compareSync(password, data[0].password);
       if (isValid) {
-        userCreation(data[0].name, data[0].email, data[0].password);
+        // userCreation(data[0].name, data[0].email, data[0].password);
         userName = data[0].name;
         console.log(userName);
         const alert = require("alert");
@@ -144,6 +145,7 @@ const getname = () => {
 };
 const getDashboard = (req, res) => {
   const { user, userCreation } = require("./../model/userModel");
+  console.log(user.phone);
   res.render("index.ejs", { user: user });
   flag = false;
 };

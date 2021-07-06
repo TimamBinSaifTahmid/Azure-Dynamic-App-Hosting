@@ -2,10 +2,11 @@
 <html lang="en">
   <%- include('../partials/head.ejs') %>
   <body class="hold-transition register-page">
+    <div style="background-image: url('1567812.jpg');"></div>
     <div class="register-box">
       <div class="card card-outline card-primary">
         <div class="card-header text-center">
-          <a href="/" class="h1"><b>ICT Fest</b>2021</a>
+          <a href="/" class="h1"><b>Cloud Project</b></a>
         </div>
         <%if(errors.length>0){%>
         <div class="alert alert-danger">
@@ -66,6 +67,20 @@
                 placeholder="Retype password"
                 id="retypedPassword"
                 name="retypedPassword"
+              />
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input
+                type="phone"
+                class="form-control"
+                placeholder="Phone"
+                id="phone"
+                name="phone"
               />
               <div class="input-group-append">
                 <div class="input-group-text">
