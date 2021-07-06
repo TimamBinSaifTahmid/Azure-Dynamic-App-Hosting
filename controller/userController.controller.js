@@ -116,7 +116,7 @@ const postLogin = (req, res) => {
     .then((data) => {
       const isValid = bcrypt.compareSync(password, data[0].password);
       if (isValid) {
-        // userCreation(data[0].name, data[0].email, data[0].password);
+        userCreation(data[0].name, data[0].email, data[0].password, user.phone);
         userName = data[0].name;
         console.log(userName);
         const alert = require("alert");
